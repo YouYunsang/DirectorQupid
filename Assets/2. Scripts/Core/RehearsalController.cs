@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using CupidDirector.Utils;
 
 public class RehearsalController : MonoBehaviour
@@ -11,6 +12,7 @@ public class RehearsalController : MonoBehaviour
     [SerializeField] private RehearsalInputController _rehearsalInputController;
     [SerializeField] private List<ActorPresenter> _actorPresenters = new List<ActorPresenter>();
     [SerializeField] private List<ActorSelectionView> _actorSelectionViews = new List<ActorSelectionView>();
+    [SerializeField] private string _stageSceneName = "StageScene";
 
     private RehearsalViewModel _viewModel;
     private RehearsalSelectionState _selectionState = RehearsalSelectionState.None;
@@ -191,7 +193,20 @@ public class RehearsalController : MonoBehaviour
 
     private void OnStartStageButtonClicked()
     {
-        Debug.Log("Start Stage button clicked.");
+        if (_stageRuntimeManager == null || _stageRuntimeManager.RuntimeData == null)
+        {
+            Debug.LogError("StageRuntimeData is not ready.");
+            return;
+        }
+
+        if (StageFlowRuntime.Instance == null)
+        {
+            Debug.LogError("StageFlowRuntime instance is missing.");
+            return;
+        }
+
+        StageFlowRuntime.Instance.SetRuntimeData(_stageRuntimeManager.RuntimeData);
+        SceneManager.LoadScene(_stageSceneName);
     }
 
     private void SelectSource(ActorId sourceActorId)

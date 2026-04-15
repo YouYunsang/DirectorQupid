@@ -218,6 +218,53 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!1 &37771492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 37771493}
+  - component: {fileID: 37771494}
+  m_Layer: 0
+  m_Name: StageFlowRuntime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &37771493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37771492}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.49694, y: -0.20469, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &37771494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37771492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d22211aebf74d34cbd5b7964104f82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageFlowRuntime
+  _runtimeData:
+    _sceneDefinition: {fileID: 0}
+    _relations: []
 --- !u!1 &149869767
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,8 +547,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
+  m_sharedMaterial: {fileID: -4156434012099517312, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -637,8 +684,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hate
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
+  m_sharedMaterial: {fileID: -4156434012099517312, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -774,8 +821,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Scene Title Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
+  m_sharedMaterial: {fileID: -4156434012099517312, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1006,8 +1053,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
+  m_sharedMaterial: {fileID: -4156434012099517312, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1767,8 +1814,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Script Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
+  m_sharedMaterial: {fileID: -4156434012099517312, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2017,8 +2064,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Reset
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
+  m_sharedMaterial: {fileID: -4156434012099517312, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2766,6 +2813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RehearsalController
   _stageRuntimeManager: {fileID: 901179041}
   _rehearsalUIView: {fileID: 1486163472}
+  _rehearsalInputController: {fileID: 964207279}
   _actorPresenters:
   - {fileID: 2082695611}
   - {fileID: 1125416}
@@ -2774,6 +2822,7 @@ MonoBehaviour:
   - {fileID: 2082695610}
   - {fileID: 1125415}
   - {fileID: 880995427}
+  _stageSceneName: StageScene
 --- !u!1 &1912577160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,8 +2882,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
+  m_sharedMaterial: {fileID: -4156434012099517312, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3344,8 +3393,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start Performance
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
+  m_sharedMaterial: {fileID: -4156434012099517312, guid: 448f8b760fae16e4ca8c4e16ae6316a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3431,3 +3480,4 @@ SceneRoots:
   - {fileID: 911685863}
   - {fileID: 168066654}
   - {fileID: 1090580263}
+  - {fileID: 37771493}
