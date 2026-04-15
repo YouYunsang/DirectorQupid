@@ -1,6 +1,6 @@
-using CupidDirector.Utils;
 using System.Collections.Generic;
 using UnityEngine;
+using CupidDirector.Utils;
 
 public class RehearsalController : MonoBehaviour
 {
@@ -8,6 +8,7 @@ public class RehearsalController : MonoBehaviour
 
     [SerializeField] private StageRuntimeManager _stageRuntimeManager;
     [SerializeField] private RehearsalUIView _rehearsalUIView;
+    [SerializeField] private RehearsalInputController _rehearsalInputController;
     [SerializeField] private List<ActorPresenter> _actorPresenters = new List<ActorPresenter>();
     [SerializeField] private List<ActorSelectionView> _actorSelectionViews = new List<ActorSelectionView>();
 
@@ -23,7 +24,7 @@ public class RehearsalController : MonoBehaviour
 
     private void OnEnable()
     {
-        BindActorPresenters();
+        BindInputController();
         BindUIView();
         RefreshView();
         RefreshSelectionViews();
@@ -31,34 +32,28 @@ public class RehearsalController : MonoBehaviour
 
     private void OnDisable()
     {
-        UnbindActorPresenters();
+        UnbindInputController();
         UnbindUIView();
     }
 
-    private void BindActorPresenters()
+    private void BindInputController()
     {
-        for (int i = 0; i < _actorPresenters.Count; i++)
+        if (_rehearsalInputController == null)
         {
-            if (_actorPresenters[i] == null)
-            {
-                continue;
-            }
-
-            _actorPresenters[i].Clicked += OnActorClicked;
+            return;
         }
+
+        _rehearsalInputController.ActorClicked += OnActorPresenterClicked;
     }
 
-    private void UnbindActorPresenters()
+    private void UnbindInputController()
     {
-        for (int i = 0; i < _actorPresenters.Count; i++)
+        if (_rehearsalInputController == null)
         {
-            if (_actorPresenters[i] == null)
-            {
-                continue;
-            }
-
-            _actorPresenters[i].Clicked -= OnActorClicked;
+            return;
         }
+
+        _rehearsalInputController.ActorClicked -= OnActorPresenterClicked;
     }
 
     private void BindUIView()
@@ -83,6 +78,16 @@ public class RehearsalController : MonoBehaviour
         _rehearsalUIView.EmotionButtonClicked -= OnEmotionButtonClicked;
         _rehearsalUIView.ResetButtonClicked -= OnResetButtonClicked;
         _rehearsalUIView.StartStageButtonClicked -= OnStartStageButtonClicked;
+    }
+
+    private void OnActorPresenterClicked(ActorPresenter actorPresenter)
+    {
+        if (actorPresenter == null)
+        {
+            return;
+        }
+
+        OnActorClicked(actorPresenter.ActorId);
     }
 
     private void OnActorClicked(ActorId clickedActorId)
@@ -113,9 +118,9 @@ public class RehearsalController : MonoBehaviour
 
     private void HandleActorClickWhenSourceSelected(ActorId clickedActorId)
     {
-        // 같은 배우를 다시 클릭하면 source 유지.
         if (_selectedSourceActorId == clickedActorId)
         {
+            ClearAllSelection();
             return;
         }
 
@@ -124,17 +129,16 @@ public class RehearsalController : MonoBehaviour
 
     private void HandleActorClickWhenTargetSelected(ActorId clickedActorId)
     {
-        // target까지 고른 상태에서 source를 바꾸고 싶으면 새 source로 재시작.
         if (_selectedSourceActorId == clickedActorId)
         {
-            ClearTargetSelection();
-            _selectionState = RehearsalSelectionState.SourceSelected;
+            ClearAllSelection();
             return;
         }
 
-        // 현재 target을 다시 클릭하면 그대로 유지.
         if (_selectedTargetActorId == clickedActorId)
         {
+            ClearTargetSelection();
+            _selectionState = RehearsalSelectionState.SourceSelected;
             return;
         }
 
@@ -156,7 +160,6 @@ public class RehearsalController : MonoBehaviour
 
         _stageRuntimeManager.SetEmotion(_selectedSourceActorId, _selectedTargetActorId, emotionType);
 
-        // 적용 후 source는 유지하고 target만 초기화한다.
         ClearTargetSelection();
         _selectionState = RehearsalSelectionState.SourceSelected;
 
@@ -179,7 +182,6 @@ public class RehearsalController : MonoBehaviour
 
         _stageRuntimeManager.SetEmotion(_selectedSourceActorId, _selectedTargetActorId, EmotionType.None);
 
-        // 적용 후 source는 유지하고 target만 초기화한다.
         ClearTargetSelection();
         _selectionState = RehearsalSelectionState.SourceSelected;
 
@@ -190,7 +192,6 @@ public class RehearsalController : MonoBehaviour
     private void OnStartStageButtonClicked()
     {
         Debug.Log("Start Stage button clicked.");
-        // 다음 단계에서 StageScene 전환 로직을 연결한다.
     }
 
     private void SelectSource(ActorId sourceActorId)
@@ -214,6 +215,13 @@ public class RehearsalController : MonoBehaviour
     private void ClearTargetSelection()
     {
         _selectedTargetActorId = ActorId.None;
+    }
+
+    private void ClearAllSelection()
+    {
+        _selectedSourceActorId = ActorId.None;
+        _selectedTargetActorId = ActorId.None;
+        _selectionState = RehearsalSelectionState.None;
     }
 
     private void RefreshView()

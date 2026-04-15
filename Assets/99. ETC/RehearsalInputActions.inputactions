@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "RehearsalInputActions",
+    "maps": [
+        {
+            "name": "Rehearsal",
+            "id": "ae232b2d-fbaa-4689-9e46-35cb4231f240",
+            "actions": [
+                {
+                    "name": "Point",
+                    "type": "Value",
+                    "id": "d49c5ea8-4998-4a6a-8770-68379a07a42a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "76a23a10-65c1-4cb3-9478-e2fa90f68498",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ba7ac6ee-4e08-4e6a-b71c-0b4f8516c8ea",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0094e282-418d-4fd9-b894-b80157fd3481",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -1447,6 +1447,53 @@ Transform:
   - {fileID: 880995426}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &964207277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964207278}
+  - component: {fileID: 964207279}
+  m_Layer: 0
+  m_Name: RehearsalInputController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &964207278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964207277}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.49694, y: -0.20469, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1267238871}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &964207279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964207277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54207a3f10f67d94fbe4a8eaba0faf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RehearsalInputController
+  _mainCamera: {fileID: 1520835826}
+  _pointActionReference: {fileID: -8655387385119707010, guid: b4d0c60b637bf8b4180820c1592e3a08, type: 3}
+  _clickActionReference: {fileID: 2309709133921868357, guid: b4d0c60b637bf8b4180820c1592e3a08, type: 3}
 --- !u!1 &984934246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +1955,7 @@ Transform:
   m_Children:
   - {fileID: 901179042}
   - {fileID: 1856487140}
+  - {fileID: 964207278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313960753

@@ -42,6 +42,9 @@ public class RehearsalUIView : MonoBehaviour
         SetText(_scriptText, displayData.ScriptText);
         SetText(_selectionText, displayData.SelectionText);
         SetText(_relationText, displayData.RelationText);
+
+        SetEmotionButtonsInteractable(displayData.CanApplyEmotion);
+        SetStartStageButtonInteractable(displayData.CanStartStage);
     }
 
     private void BindButtons()
